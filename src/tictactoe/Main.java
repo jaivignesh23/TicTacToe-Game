@@ -17,5 +17,13 @@ public class Main {
     // 2. Create an instance of the view.
     // 3. Create an instance of the controller.
     // 4. Call playGame() on the controller.
+
+    // Create the model
+    TicTacToeModel model = new TicTacToeModel();
+    // Create the view
+    TicTacToeView view = new TicTacToeViewImpl("Echo a string", model);
+    // Create the controller with the model and view
+    TicTacToeController c = new TicTacToeControllerImpl(model, view);
+
   }
 }
