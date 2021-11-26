@@ -1,0 +1,12 @@
+# Project exclude paths
+/out/
+/.idea
+*.iml
+/bin/
+
+# eclipse excludes
+/.checkstyle
+/.classpath
+/.eclipse-pmd
+/.project
+/.settings
