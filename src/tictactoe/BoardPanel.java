@@ -41,8 +41,12 @@ public class BoardPanel extends JPanel {
     // Game result
     if (model.isGameOver()) {
 
-    } else {
+      g2d.drawString((model.getWinner() == null ?
+              "Game over: tie game." : "Game over: " + model.getWinner().toString() + " wins."),
+          10, 20);
 
+    } else {
+      g2d.drawString("Turn: " + model.getTurn().toString(),10, 20);
     }
 //    g2d.setFont(???);
     // iterate over board, draw X and O accordingly
