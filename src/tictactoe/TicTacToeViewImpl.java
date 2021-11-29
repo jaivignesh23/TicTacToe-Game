@@ -1,5 +1,8 @@
 package tictactoe;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -10,27 +13,33 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
   public TicTacToeViewImpl(String title, TicTacToeModel model) {
     super(title);
 
-    this.setSize(500,500);
-    this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    setSize(500,500);
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     boardPanel = new BoardPanel(model);
     add(boardPanel);
 
-    pack();
-    setVisible(true);
   }
 
   @Override
   public void addClickListener(TicTacToeController listener) {
-
+    MouseListener ml = new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        int row = (e.getY() - BoardPanel.OFFSET) / BoardPanel.CELL_SPACE;
+        int col = (e.getX() - BoardPanel.OFFSET) / BoardPanel.CELL_SPACE;
+        listener.handleCellClick(row, col);
+      }
+    };
+    boardPanel.addMouseListener(ml);
   }
 
   @Override
   public void refresh() {
-
+    this.repaint();
   }
 
   @Override
   public void makeVisible() {
-
+    this.setVisible(true);
   }
 }

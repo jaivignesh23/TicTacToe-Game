@@ -23,7 +23,8 @@ public class Main {
     // Create the view
     TicTacToeView view = new TicTacToeViewImpl("Echo a string", model);
     // Create the controller with the model and view
-    TicTacToeController c = new TicTacToeControllerImpl(model, view);
+    TicTacToeController control = new TicTacToeControllerImpl(model, view);
 
+    control.playGame(model);
   }
 }
