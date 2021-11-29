@@ -29,9 +29,23 @@ public class BoardPanel extends JPanel {
     g2d.setFont(new Font("Verdana", Font.PLAIN, 18));
 
     Player[][] board = model.getBoard();
+    for (int r = 0; r < 3; r++) {
+      for (int c = 0; c < 3; c++) {
+        if (board[r][c] != null) {
+          g2d.drawString(board[r][c].toString(), Math.round((c) * CELL_SPACE + OFFSET),
+              Math.round((r) * CELL_SPACE + OFFSET));
+        }
+      }
+    }
+
+    if (model.isGameOver()) {
+
+    } else {
+
+    }
 //    g2d.setFont(???);
     // iterate over board, draw X and O accordingly
-    g2d.drawString("asdf", 5, 6);
+//    g2d.drawString("asdf", 5, 6);
 
 
   }
