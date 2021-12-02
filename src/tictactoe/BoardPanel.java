@@ -5,6 +5,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
+/**
+ * BoardPanel represents the board layout of the tic-tac-toe game and defines the view
+ * and the game result view as a panel.
+ */
 public class BoardPanel extends JPanel {
 
   private final TicTacToeModel model;
@@ -19,12 +23,14 @@ public class BoardPanel extends JPanel {
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
     Graphics2D g2d = (Graphics2D) g;
-    // draw grid lines
-    //g2d.drawLine(???);
+
+    // draw grid lines.
 
     for (int i = 0; i <= 3; i++) {
-      g2d.drawLine(i * CELL_SPACE + OFFSET, OFFSET, i * CELL_SPACE + OFFSET, 3 * CELL_SPACE + OFFSET);
-      g2d.drawLine(OFFSET, i * CELL_SPACE + OFFSET, 3 * CELL_SPACE + OFFSET, i * CELL_SPACE + OFFSET);
+      g2d.drawLine(i * CELL_SPACE + OFFSET, OFFSET,
+          i * CELL_SPACE + OFFSET, 3 * CELL_SPACE + OFFSET);
+      g2d.drawLine(OFFSET, i * CELL_SPACE + OFFSET,
+          3 * CELL_SPACE + OFFSET, i * CELL_SPACE + OFFSET);
     }
     g2d.setFont(new Font("Verdana", Font.PLAIN, 18));
 
@@ -41,16 +47,13 @@ public class BoardPanel extends JPanel {
     // Game result
     if (model.isGameOver()) {
 
-      g2d.drawString((model.getWinner() == null ?
-              "Game over: tie game." : "Game over: " + model.getWinner().toString() + " wins."),
+      g2d.drawString((model.getWinner() == null
+              ? "Game over: tie game." : "Game over: " + model.getWinner().toString() + " wins."),
           10, 20);
 
     } else {
       g2d.drawString("Turn: " + model.getTurn().toString(),10, 20);
     }
-//    g2d.setFont(???);
-    // iterate over board, draw X and O accordingly
-//    g2d.drawString("asdf", 5, 6);
 
 
   }

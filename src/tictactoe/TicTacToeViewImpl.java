@@ -6,6 +6,10 @@ import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
+/**
+ * TicTacToeViewImpl represents the view of the TicTacToe game that the user can interact to
+ * play the game and get the result.
+ */
 public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
 
   private BoardPanel boardPanel;

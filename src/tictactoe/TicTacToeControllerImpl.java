@@ -1,5 +1,9 @@
 package tictactoe;
 
+/**
+ * TicTacToeControllerImpl represents the control of the Tic Tac Toe game,
+ * get the user interaction and provides the desired results based on the functionality.
+ */
 public class TicTacToeControllerImpl implements TicTacToeController {
 
   private final TicTacToeModel model;
