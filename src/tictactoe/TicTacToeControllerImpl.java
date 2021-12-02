@@ -22,7 +22,13 @@ public class TicTacToeControllerImpl implements TicTacToeController {
 
   @Override
   public void handleCellClick(int row, int col) {
-    model.move(row, col);
+    try{
+      model.move(row, col);
+    }
+    catch(IllegalStateException isl) {
+
+    }
+
     view.refresh();
   }
 }

@@ -21,7 +21,7 @@ public class Main {
     // Create the model
     TicTacToeModel model = new TicTacToeModel();
     // Create the view
-    TicTacToeView view = new TicTacToeViewImpl("Echo a string", model);
+    TicTacToeView view = new TicTacToeViewImpl("Tic Tac Toe", model);
     // Create the controller with the model and view
     TicTacToeController control = new TicTacToeControllerImpl(model, view);
 
