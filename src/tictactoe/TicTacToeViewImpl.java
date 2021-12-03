@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- * TicTacToeViewImpl represents the view of the TicTacToe game that the user can interact to
- * play the game and get the result.
+ * TicTacToeViewImpl represents the view of the TicTacToe game that the user can interact to play
+ * the game and get the result.
  */
 public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
 
@@ -23,7 +23,7 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
   public TicTacToeViewImpl(String title, TicTacToeModel model) {
     super(title);
 
-    setSize(500,500);
+    setSize(500, 500);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     boardPanel = new BoardPanel(model);
     add(boardPanel);

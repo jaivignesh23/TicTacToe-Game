@@ -1,8 +1,8 @@
 package tictactoe;
 
 /**
- * TicTacToeControllerImpl represents the control of the Tic Tac Toe game,
- * get the user interaction and provides the desired results based on the functionality.
+ * TicTacToeControllerImpl represents the control of the Tic Tac Toe game, get the user interaction
+ * and provides the desired results based on the functionality.
  */
 public class TicTacToeControllerImpl implements TicTacToeController {
 
@@ -10,11 +10,10 @@ public class TicTacToeControllerImpl implements TicTacToeController {
   private final TicTacToeView view;
 
   /**
-   * The functionality that is to be implemented when user interacts is decided by the
-   * controller.
+   * The functionality that is to be implemented when user interacts is decided by the controller.
    *
    * @param model the functionality is defined about what the player moves.
-   * @param view the display of the tic tac toe game
+   * @param view  the display of the tic tac toe game
    */
   public TicTacToeControllerImpl(TicTacToeModel model, TicTacToeView view) {
     this.model = model;
@@ -29,11 +28,10 @@ public class TicTacToeControllerImpl implements TicTacToeController {
 
   @Override
   public void handleCellClick(int row, int col) {
-    try{
+    try {
       model.move(row, col);
-    }
-    catch(IllegalStateException isl) {
-
+    } catch (IllegalStateException isl) {
+      // Empty catch to handle and not throw exceptions.
     }
     view.refresh();
   }

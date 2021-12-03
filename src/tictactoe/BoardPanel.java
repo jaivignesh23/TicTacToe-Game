@@ -6,8 +6,8 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 /**
- * BoardPanel represents the board layout of the tic-tac-toe game and defines the view
- * and the game result view as a panel.
+ * BoardPanel represents the board layout of the tic-tac-toe game and defines the view and the game
+ * result view as a panel.
  */
 public class BoardPanel extends JPanel {
 
@@ -17,6 +17,7 @@ public class BoardPanel extends JPanel {
 
   /**
    * the model of the game is used to get the functionality and develop the game board.
+   *
    * @param model the functionality of the board game and values.
    */
   public BoardPanel(TicTacToeModel model) {
@@ -42,8 +43,8 @@ public class BoardPanel extends JPanel {
     for (int r = 0; r < 3; r++) {
       for (int c = 0; c < 3; c++) {
         if (board[r][c] != null) {
-          g2d.drawString(board[r][c].toString(), Math.round((c+0.5) * CELL_SPACE + OFFSET),
-              Math.round((r+0.5) * CELL_SPACE + OFFSET));
+          g2d.drawString(board[r][c].toString(), Math.round((c + 0.5) * CELL_SPACE + OFFSET),
+              Math.round((r + 0.5) * CELL_SPACE + OFFSET));
         }
       }
     }
@@ -56,7 +57,7 @@ public class BoardPanel extends JPanel {
           10, 20);
 
     } else {
-      g2d.drawString("Turn: " + model.getTurn().toString(),10, 20);
+      g2d.drawString("Turn: " + model.getTurn().toString(), 10, 20);
     }
 
 
