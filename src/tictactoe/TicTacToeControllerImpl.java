@@ -9,6 +9,13 @@ public class TicTacToeControllerImpl implements TicTacToeController {
   private final TicTacToeModel model;
   private final TicTacToeView view;
 
+  /**
+   * The functionality that is to be implemented when user interacts is decided by the
+   * controller.
+   *
+   * @param model the functionality is defined about what the player moves.
+   * @param view the display of the tic tac toe game
+   */
   public TicTacToeControllerImpl(TicTacToeModel model, TicTacToeView view) {
     this.model = model;
     this.view = view;
@@ -28,7 +35,6 @@ public class TicTacToeControllerImpl implements TicTacToeController {
     catch(IllegalStateException isl) {
 
     }
-
     view.refresh();
   }
 }

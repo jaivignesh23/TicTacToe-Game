@@ -14,6 +14,12 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
 
   private BoardPanel boardPanel;
 
+  /**
+   * The display of the game is defined and reassigned in the view functionality.
+   *
+   * @param title the window title that is displayed.
+   * @param model the control of the game functionality.
+   */
   public TicTacToeViewImpl(String title, TicTacToeModel model) {
     super(title);
 
