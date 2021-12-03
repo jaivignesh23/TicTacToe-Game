@@ -15,6 +15,10 @@ public class BoardPanel extends JPanel {
   public static final int CELL_SPACE = 80;
   public static final int OFFSET = 80;
 
+  /**
+   * the model of the game is used to get the functionality and develop the game board.
+   * @param model the functionality of the board game and values.
+   */
   public BoardPanel(TicTacToeModel model) {
     this.model = model;
   }
