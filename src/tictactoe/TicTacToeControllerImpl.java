@@ -32,7 +32,12 @@ public class TicTacToeControllerImpl implements TicTacToeController {
     if(m == null) {
       throw new IllegalArgumentException("Empty model in play game");
     }
-    view.addClickListener(this);
+    try {
+      view.addClickListener(this);
+    }
+    catch(IllegalArgumentException il) {
+      // Empty catch to handle and not throw exceptions.
+    }
     view.makeVisible();
   }
 
