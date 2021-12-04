@@ -10,6 +10,11 @@ class MouseClick extends MouseAdapter {
 
   private final TicTacToeController listener;
 
+  /**
+   * the event of the mouse click as listeners created from the view.
+   *
+   * @param listener the event of the mouse click as listeners created.
+   */
   MouseClick(TicTacToeController listener) {
     if(listener == null) {
       throw new IllegalArgumentException("Invalid listener");
