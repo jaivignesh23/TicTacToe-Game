@@ -1,7 +1,5 @@
 package tictactoe;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -22,10 +20,9 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
    */
   public TicTacToeViewImpl(String title, TicTacToeModel model) {
     super(title);
-    if(model == null){
+    if (model == null) {
       throw new IllegalArgumentException("Invalid model");
     }
-
 
     setSize(500, 500);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -36,10 +33,10 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
 
   @Override
   public void addClickListener(TicTacToeController listener) {
-    if(listener == null){
+    if (listener == null) {
       throw new IllegalArgumentException("Invalid listener");
     }
-    MouseListener ml  = new MouseClick(listener);
+    MouseListener ml = new MouseClick(listener);
     boardPanel.addMouseListener(ml);
   }
 

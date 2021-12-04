@@ -19,10 +19,10 @@ public class TicTacToeControllerImpl implements TicTacToeController {
    * @param view  the display of the tic tac toe game
    */
   public TicTacToeControllerImpl(TicTacToeModel model, TicTacToeView view) {
-    if(model == null) {
+    if (model == null) {
       throw new IllegalArgumentException("Empty model");
     }
-    if(view == null) {
+    if (view == null) {
       throw new IllegalArgumentException("Empty view");
     }
 
@@ -32,28 +32,27 @@ public class TicTacToeControllerImpl implements TicTacToeController {
 
   @Override
   public void playGame(TicTacToe m) {
-    if(m == null) {
+    if (m == null) {
       throw new IllegalArgumentException("Empty model in play game");
     }
     try {
       view.addClickListener(this);
-    }
-    catch(IllegalArgumentException il) {
+    } catch (IllegalArgumentException il) {
       // Empty catch to handle and not throw exceptions.
-      JOptionPane.showMessageDialog((Component) this.view,il.getMessage(),
-          "Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog((Component) this.view, il.getMessage(),
+          "Error", JOptionPane.ERROR_MESSAGE);
     }
     view.makeVisible();
   }
 
   @Override
   public void handleCellClick(int row, int col) {
-  // Row column related exceptions are handled in the model.
+    // Row column related exceptions are handled in the model.
     try {
       model.move(row, col);
     } catch (IllegalStateException isl) {
-      JOptionPane.showMessageDialog((Component) this.view,isl.getMessage(),
-          "Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog((Component) this.view, isl.getMessage(),
+          "Error", JOptionPane.ERROR_MESSAGE);
       // Empty catch to handle and not throw exceptions.
     }
     view.refresh();

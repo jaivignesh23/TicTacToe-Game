@@ -16,7 +16,7 @@ class MouseClick extends MouseAdapter {
    * @param listener the event of the mouse click as listeners created.
    */
   MouseClick(TicTacToeController listener) {
-    if(listener == null) {
+    if (listener == null) {
       throw new IllegalArgumentException("Invalid listener");
     }
     this.listener = listener;
@@ -24,7 +24,7 @@ class MouseClick extends MouseAdapter {
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    if(e == null) {
+    if (e == null) {
       throw new IllegalArgumentException("Invalid mouse click operation");
     }
     int row = (e.getY() - BoardPanel.OFFSET) / BoardPanel.CELL_SPACE;
