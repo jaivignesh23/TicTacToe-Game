@@ -16,18 +16,29 @@ public class TicTacToeControllerImpl implements TicTacToeController {
    * @param view  the display of the tic tac toe game
    */
   public TicTacToeControllerImpl(TicTacToeModel model, TicTacToeView view) {
+    if(model == null) {
+      throw new IllegalArgumentException("Empty model");
+    }
+    if(view == null) {
+      throw new IllegalArgumentException("Empty view");
+    }
+
     this.model = model;
     this.view = view;
   }
 
   @Override
   public void playGame(TicTacToe m) {
+    if(m == null) {
+      throw new IllegalArgumentException("Empty model in play game");
+    }
     view.addClickListener(this);
     view.makeVisible();
   }
 
   @Override
   public void handleCellClick(int row, int col) {
+  // Row column related exceptions are handled in the model.
     try {
       model.move(row, col);
     } catch (IllegalStateException isl) {

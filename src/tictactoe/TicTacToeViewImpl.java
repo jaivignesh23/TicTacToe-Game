@@ -22,6 +22,10 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
    */
   public TicTacToeViewImpl(String title, TicTacToeModel model) {
     super(title);
+    if(model == null){
+      throw new IllegalArgumentException("Invalid model");
+    }
+
 
     setSize(500, 500);
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -32,14 +36,10 @@ public class TicTacToeViewImpl extends JFrame implements TicTacToeView {
 
   @Override
   public void addClickListener(TicTacToeController listener) {
-    MouseListener ml = new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        int row = (e.getY() - BoardPanel.OFFSET) / BoardPanel.CELL_SPACE;
-        int col = (e.getX() - BoardPanel.OFFSET) / BoardPanel.CELL_SPACE;
-        listener.handleCellClick(row, col);
-      }
-    };
+    if(listener == null){
+      throw new IllegalArgumentException("Invalid listener");
+    }
+    MouseListener ml  = new MouseClick(listener);
     boardPanel.addMouseListener(ml);
   }
 

@@ -21,11 +21,17 @@ public class BoardPanel extends JPanel {
    * @param model the functionality of the board game and values.
    */
   public BoardPanel(TicTacToeModel model) {
+    if(model == null) {
+      throw new IllegalArgumentException("Invalid model");
+    }
     this.model = model;
   }
 
   @Override
   protected void paintComponent(Graphics g) {
+    if(g == null){
+      throw new IllegalArgumentException("Invalid graphic");
+    }
     super.paintComponent(g);
     Graphics2D g2d = (Graphics2D) g;
 
