@@ -1,5 +1,8 @@
 package tictactoe;
 
+import java.awt.Component;
+import javax.swing.JOptionPane;
+
 /**
  * TicTacToeControllerImpl represents the control of the Tic Tac Toe game, get the user interaction
  * and provides the desired results based on the functionality.
@@ -37,6 +40,8 @@ public class TicTacToeControllerImpl implements TicTacToeController {
     }
     catch(IllegalArgumentException il) {
       // Empty catch to handle and not throw exceptions.
+      JOptionPane.showMessageDialog((Component) this.view,il.getMessage(),
+          "Error",JOptionPane.ERROR_MESSAGE);
     }
     view.makeVisible();
   }
@@ -47,6 +52,8 @@ public class TicTacToeControllerImpl implements TicTacToeController {
     try {
       model.move(row, col);
     } catch (IllegalStateException isl) {
+      JOptionPane.showMessageDialog((Component) this.view,isl.getMessage(),
+          "Error",JOptionPane.ERROR_MESSAGE);
       // Empty catch to handle and not throw exceptions.
     }
     view.refresh();
