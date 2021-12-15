@@ -24,6 +24,7 @@ class MouseClick extends MouseAdapter {
 
   @Override
   public void mouseClicked(MouseEvent e) {
+
     if (e == null) {
       throw new IllegalArgumentException("Invalid mouse click operation");
     }

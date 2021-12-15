@@ -55,6 +55,11 @@ public class TicTacToeControllerImpl implements TicTacToeController {
           "Error", JOptionPane.ERROR_MESSAGE);
       // Empty catch to handle and not throw exceptions.
     }
+    catch (IllegalArgumentException il) {
+      JOptionPane.showMessageDialog((Component) this.view, il.getMessage(),
+          "Error", JOptionPane.ERROR_MESSAGE);
+      // Empty catch to handle and not throw exceptions.
+    }
     view.refresh();
   }
 }
